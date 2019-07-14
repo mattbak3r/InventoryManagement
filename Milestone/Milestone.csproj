@@ -100,6 +100,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Images\high-fidelity prototype.png" />
+    <Content Include="Images\low-fidelity prototype.png" />
+    <Content Include="Images\Properties of Inventory Item.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
