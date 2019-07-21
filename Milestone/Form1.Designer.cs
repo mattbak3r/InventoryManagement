@@ -40,10 +40,15 @@
             // 
             // lb_products
             // 
+            this.lb_products.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_products.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_products.FormattingEnabled = true;
+            this.lb_products.ItemHeight = 19;
             this.lb_products.Location = new System.Drawing.Point(12, 86);
             this.lb_products.Name = "lb_products";
-            this.lb_products.Size = new System.Drawing.Size(326, 329);
+            this.lb_products.Size = new System.Drawing.Size(326, 327);
             this.lb_products.TabIndex = 0;
             // 
             // tb_searchBar
@@ -64,6 +69,7 @@
             // 
             // btn_addNewProduct
             // 
+            this.btn_addNewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_addNewProduct.Location = new System.Drawing.Point(345, 301);
             this.btn_addNewProduct.Name = "btn_addNewProduct";
             this.btn_addNewProduct.Size = new System.Drawing.Size(75, 23);
@@ -74,6 +80,7 @@
             // 
             // btn_viewProduct
             // 
+            this.btn_viewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_viewProduct.Location = new System.Drawing.Point(345, 362);
             this.btn_viewProduct.Name = "btn_viewProduct";
             this.btn_viewProduct.Size = new System.Drawing.Size(75, 23);
@@ -84,6 +91,7 @@
             // 
             // btn_removeProduct
             // 
+            this.btn_removeProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_removeProduct.Location = new System.Drawing.Point(345, 331);
             this.btn_removeProduct.Name = "btn_removeProduct";
             this.btn_removeProduct.Size = new System.Drawing.Size(75, 23);
@@ -94,6 +102,7 @@
             // 
             // btn_exit
             // 
+            this.btn_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_exit.Location = new System.Drawing.Point(345, 391);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
@@ -126,7 +135,9 @@
             this.Controls.Add(this.tb_searchBar);
             this.Controls.Add(this.lb_products);
             this.Name = "form_products";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Products";
+            this.Load += new System.EventHandler(this.Form_products_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
