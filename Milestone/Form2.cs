@@ -12,9 +12,18 @@ namespace Milestone
 {
     public partial class form_viewProducts : Form
     {
+        form_products f1;
         public form_viewProducts()
         {
+            this.f1 = f1;
             InitializeComponent();
+        }
+
+        private void Form_viewProducts_Load(object sender, EventArgs e)
+        {
+            Inventory itemSelected = this.f1.GetSelection;
+            lb_name.Text = itemSelected.Name;
+            lb_productPrice.Text = itemSelected.Price.ToString();
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)

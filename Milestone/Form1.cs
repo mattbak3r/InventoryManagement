@@ -13,9 +13,6 @@ namespace Milestone
 {
     public partial class form_products : Form
     {
-        String header = "{0, -10}{1, -20}"; //{1, -10}{2, -10}{3, -20}{4, -20}
-        String data = "{0, -10}{1, -20}";  //{1, -10:C}{2, -10}{3, -20}{4, -20}
-
         public form_products()
         {
             InitializeComponent();
@@ -25,6 +22,7 @@ namespace Milestone
         {
             form_viewProducts f2 = new form_viewProducts();
             f2.ShowDialog(); // Shows Form2
+            
         }
 
         private void Btn_addNewProduct_Click(object sender, EventArgs e)
@@ -45,18 +43,16 @@ namespace Milestone
 
         private void Form_products_Load(object sender, EventArgs e)
         {
-            lb_products.Items.Add("Stock" + "\t" + "Model");  // "Price", "Size", "Resolution", "Brand", 
-
+            lb_products.Items.Add("Stock" + "\t" + "Model");
 
             try
             {
                 String[] input = File.ReadAllLines("inventory.txt");
                 int arrayLength = input.Length;
                 Inventory[] inv = new Inventory[arrayLength];
+
                 for (int x = 0; x < input.Length; x++)
                 {
-
-
                     String[] splitInput = input[x].Split(',');
                     int id = int.Parse(splitInput[0]);
                     String name = splitInput[1];
@@ -68,17 +64,20 @@ namespace Milestone
 
                     inv[x] = new Inventory(id, name, model, stock, price, size, rez);
 
-                    lb_products.Items.Add(stock + "\t" + model);  // price, size, rez, name, 
+                    lb_products.Items.Add(inv[x].Stock + "\t" + inv[x].Model);
 
                     Console.WriteLine(inv[x].Price);
                 }
-                lb_products.Items.Add("end of file");
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            
+        }
+        public Inventory GetSelection
+        {
+            get { return (Inventory)lb_products.SelectedItem; }
         }
     }
 }

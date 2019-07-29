@@ -81,6 +81,7 @@
             // btn_viewProduct
             // 
             this.btn_viewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_viewProduct.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btn_viewProduct.Location = new System.Drawing.Point(345, 362);
             this.btn_viewProduct.Name = "btn_viewProduct";
             this.btn_viewProduct.Size = new System.Drawing.Size(75, 23);
