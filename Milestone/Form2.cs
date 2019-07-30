@@ -13,17 +13,24 @@ namespace Milestone
     public partial class form_viewProducts : Form
     {
         form_products f1;
-        public form_viewProducts()
+        private Inventory _product;
+        public form_viewProducts(Inventory product)
         {
+            _product = product;
             this.f1 = f1;
             InitializeComponent();
         }
 
         private void Form_viewProducts_Load(object sender, EventArgs e)
         {
-            Inventory itemSelected = this.f1.GetSelection;
-            lb_name.Text = itemSelected.Name;
-            lb_productPrice.Text = itemSelected.Price.ToString();
+            pb_productPicture.Image = Image.FromFile("../../Images/" + _product.Picture);
+            lb_productName.Text = _product.Name;
+            lb_productPrice.Text = _product.Price.ToString("C2");
+            lb_productScreenResolution.Text = _product.Resolution;
+            lb_productScreenSize.Text = _product.Size.ToString();
+            lb_productStock.Text = _product.Stock.ToString();
+            lb_productID.Text = _product.Id.ToString();
+            lb_productModel.Text = _product.Model;
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)

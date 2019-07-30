@@ -16,8 +16,9 @@ namespace Milestone
         private double size;
         private String resolution;
         private String model;
+        private String picture;
 
-        public Inventory(int aID, String aName, String aModel, int aStock, double aPrice, double aSize, String aResolution)
+        public Inventory(int aID, String aName, String aModel, int aStock, double aPrice, double aSize, String aResolution, String aPicture)
         {
             id = aID;
             name = aName;
@@ -26,6 +27,7 @@ namespace Milestone
             price = aPrice;
             size = aSize;
             resolution = aResolution;
+            picture = aPicture;
         }
         public override String ToString()
         {
@@ -74,5 +76,12 @@ namespace Milestone
             get { return resolution; }
             set { resolution = value; }
         }
+
+        public String Picture
+        {
+            get { return picture; }
+            set { picture = value; }
+        }
+
     }
 }

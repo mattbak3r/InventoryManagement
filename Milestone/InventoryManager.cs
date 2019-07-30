@@ -13,7 +13,7 @@ namespace Milestone
         {
             try
             {
-                String[] input = File.ReadAllLines("inventory.txt");
+                String[] input = File.ReadAllLines("../../inventory.txt");
                 int arrayLength = input.Length;
                 Inventory[] inv = new Inventory[arrayLength];
 
@@ -27,8 +27,9 @@ namespace Milestone
                     double price = double.Parse(splitInput[4]);
                     double size = double.Parse(splitInput[5]);
                     String rez = splitInput[6];
+                    String picture = splitInput[7];
 
-                    inv[x] = new Inventory(id, name, model, stock, price, size, rez);
+                    inv[x] = new Inventory(id, name, model, stock, price, size, rez, picture);
                 }
                 return inv;
             } catch (Exception) {

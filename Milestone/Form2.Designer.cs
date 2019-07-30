@@ -44,6 +44,8 @@
             this.btn_order = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
+            this.lb_model = new System.Windows.Forms.Label();
+            this.lb_productModel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_productPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +63,7 @@
             // lb_stock
             // 
             this.lb_stock.AutoSize = true;
-            this.lb_stock.Location = new System.Drawing.Point(134, 214);
+            this.lb_stock.Location = new System.Drawing.Point(134, 236);
             this.lb_stock.Name = "lb_stock";
             this.lb_stock.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lb_stock.Size = new System.Drawing.Size(53, 13);
@@ -72,7 +74,7 @@
             // lb_price
             // 
             this.lb_price.AutoSize = true;
-            this.lb_price.Location = new System.Drawing.Point(150, 242);
+            this.lb_price.Location = new System.Drawing.Point(150, 264);
             this.lb_price.Name = "lb_price";
             this.lb_price.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lb_price.Size = new System.Drawing.Size(37, 13);
@@ -83,7 +85,7 @@
             // lb_screenSize
             // 
             this.lb_screenSize.AutoSize = true;
-            this.lb_screenSize.Location = new System.Drawing.Point(117, 273);
+            this.lb_screenSize.Location = new System.Drawing.Point(117, 295);
             this.lb_screenSize.Name = "lb_screenSize";
             this.lb_screenSize.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lb_screenSize.Size = new System.Drawing.Size(70, 13);
@@ -94,7 +96,7 @@
             // lb_screenResolution
             // 
             this.lb_screenResolution.AutoSize = true;
-            this.lb_screenResolution.Location = new System.Drawing.Point(87, 301);
+            this.lb_screenResolution.Location = new System.Drawing.Point(87, 323);
             this.lb_screenResolution.Name = "lb_screenResolution";
             this.lb_screenResolution.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lb_screenResolution.Size = new System.Drawing.Size(100, 13);
@@ -107,6 +109,7 @@
             this.pb_productPicture.Location = new System.Drawing.Point(102, 12);
             this.pb_productPicture.Name = "pb_productPicture";
             this.pb_productPicture.Size = new System.Drawing.Size(225, 137);
+            this.pb_productPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_productPicture.TabIndex = 5;
             this.pb_productPicture.TabStop = false;
             this.pb_productPicture.Click += new System.EventHandler(this.PictureBox1_Click);
@@ -141,7 +144,7 @@
             // lb_productStock
             // 
             this.lb_productStock.AutoSize = true;
-            this.lb_productStock.Location = new System.Drawing.Point(194, 214);
+            this.lb_productStock.Location = new System.Drawing.Point(194, 236);
             this.lb_productStock.Name = "lb_productStock";
             this.lb_productStock.Size = new System.Drawing.Size(86, 13);
             this.lb_productStock.TabIndex = 14;
@@ -151,7 +154,7 @@
             // lb_productPrice
             // 
             this.lb_productPrice.AutoSize = true;
-            this.lb_productPrice.Location = new System.Drawing.Point(194, 242);
+            this.lb_productPrice.Location = new System.Drawing.Point(194, 264);
             this.lb_productPrice.Name = "lb_productPrice";
             this.lb_productPrice.Size = new System.Drawing.Size(71, 13);
             this.lb_productPrice.TabIndex = 15;
@@ -160,7 +163,7 @@
             // lb_productScreenSize
             // 
             this.lb_productScreenSize.AutoSize = true;
-            this.lb_productScreenSize.Location = new System.Drawing.Point(194, 273);
+            this.lb_productScreenSize.Location = new System.Drawing.Point(194, 295);
             this.lb_productScreenSize.Name = "lb_productScreenSize";
             this.lb_productScreenSize.Size = new System.Drawing.Size(104, 13);
             this.lb_productScreenSize.TabIndex = 16;
@@ -169,7 +172,7 @@
             // lb_productScreenResolution
             // 
             this.lb_productScreenResolution.AutoSize = true;
-            this.lb_productScreenResolution.Location = new System.Drawing.Point(194, 301);
+            this.lb_productScreenResolution.Location = new System.Drawing.Point(194, 323);
             this.lb_productScreenResolution.Name = "lb_productScreenResolution";
             this.lb_productScreenResolution.Size = new System.Drawing.Size(134, 13);
             this.lb_productScreenResolution.TabIndex = 17;
@@ -205,11 +208,31 @@
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.Btn_back_Click);
             // 
+            // lb_model
+            // 
+            this.lb_model.AutoSize = true;
+            this.lb_model.Location = new System.Drawing.Point(145, 211);
+            this.lb_model.Name = "lb_model";
+            this.lb_model.Size = new System.Drawing.Size(42, 13);
+            this.lb_model.TabIndex = 21;
+            this.lb_model.Text = "Model: ";
+            // 
+            // lb_productModel
+            // 
+            this.lb_productModel.AutoSize = true;
+            this.lb_productModel.Location = new System.Drawing.Point(197, 211);
+            this.lb_productModel.Name = "lb_productModel";
+            this.lb_productModel.Size = new System.Drawing.Size(74, 13);
+            this.lb_productModel.TabIndex = 22;
+            this.lb_productModel.Text = "Monitor Model";
+            // 
             // form_viewProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 426);
+            this.Controls.Add(this.lb_productModel);
+            this.Controls.Add(this.lb_model);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_order);
@@ -253,5 +276,7 @@
         private System.Windows.Forms.Button btn_order;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.Label lb_model;
+        private System.Windows.Forms.Label lb_productModel;
     }
 }

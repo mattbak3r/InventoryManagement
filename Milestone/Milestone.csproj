@@ -104,9 +104,20 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Images\Acer - GN246HL.png" />
+    <Content Include="Images\Acer - KG221Q.png" />
+    <Content Include="Images\Acer - Predator X27 bmiiphzx.png" />
+    <Content Include="Images\Asus - ROG SWIFT.png" />
+    <Content Include="Images\Asus - VG248QE.png" />
+    <Content Include="Images\Dell - UP3218K.png" />
     <Content Include="Images\high-fidelity prototype.png" />
+    <Content Include="Images\HP - Omen X Emperium.png" />
+    <Content Include="Images\LG - 34GK950F-B.png" />
     <Content Include="Images\low-fidelity prototype.png" />
+    <Content Include="Images\MSI - Optix MAG241C.png" />
+    <Content Include="Images\ProLiteGE2488HS-B1.png" />
     <Content Include="Images\Properties of Inventory Item.png" />
+    <Content Include="Images\Samsung - CHG90.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
