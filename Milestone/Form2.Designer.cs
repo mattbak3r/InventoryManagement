@@ -112,7 +112,6 @@
             this.pb_productPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_productPicture.TabIndex = 5;
             this.pb_productPicture.TabStop = false;
-            this.pb_productPicture.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // lb_ID
             // 
@@ -149,7 +148,6 @@
             this.lb_productStock.Size = new System.Drawing.Size(86, 13);
             this.lb_productStock.TabIndex = 14;
             this.lb_productStock.Text = "Number in Stock";
-            this.lb_productStock.Click += new System.EventHandler(this.Label2_Click);
             // 
             // lb_productPrice
             // 

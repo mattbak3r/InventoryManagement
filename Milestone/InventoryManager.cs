@@ -87,7 +87,6 @@ namespace Milestone
         }
         public void Save(Inventory[] inv)
         {
-            Array.Sort(inv);
             try
             {
                 File.WriteAllText("../../inventory.txt", string.Empty);

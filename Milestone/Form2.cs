@@ -33,16 +33,6 @@ namespace Milestone
             lb_productModel.Text = _product.Model;
         }
 
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_back_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -55,7 +45,8 @@ namespace Milestone
 
         private void Btn_edit_Click(object sender, EventArgs e)
         {
-
+            form_edit _formEdit = new form_edit(_product);
+            _formEdit.ShowDialog();
         }
     }
 }
