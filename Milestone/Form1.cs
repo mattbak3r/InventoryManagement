@@ -13,7 +13,9 @@ namespace Milestone
 {
     public partial class form_products : Form
     {
+
         Inventory[] inv;
+
         public form_products()
         {
             InitializeComponent();

@@ -29,11 +29,7 @@ namespace Milestone
             resolution = aResolution;
             picture = aPicture;
         }
-        public override String ToString()
-        {
-            return id + " " + name + " " + model + " " + stock + " " + price + " " + size + " " + resolution;
-        }
-
+        
         public int Id
         {
             get { return id; }

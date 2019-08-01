@@ -135,7 +135,7 @@
             // lb_productName
             // 
             this.lb_productName.AutoSize = true;
-            this.lb_productName.Location = new System.Drawing.Point(194, 184);
+            this.lb_productName.Location = new System.Drawing.Point(194, 185);
             this.lb_productName.Name = "lb_productName";
             this.lb_productName.Size = new System.Drawing.Size(73, 13);
             this.lb_productName.TabIndex = 13;
@@ -220,7 +220,7 @@
             // lb_productModel
             // 
             this.lb_productModel.AutoSize = true;
-            this.lb_productModel.Location = new System.Drawing.Point(197, 211);
+            this.lb_productModel.Location = new System.Drawing.Point(194, 211);
             this.lb_productModel.Name = "lb_productModel";
             this.lb_productModel.Size = new System.Drawing.Size(74, 13);
             this.lb_productModel.TabIndex = 22;

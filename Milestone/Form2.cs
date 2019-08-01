@@ -12,12 +12,11 @@ namespace Milestone
 {
     public partial class form_viewProducts : Form
     {
-        form_products f1;
+        
         private Inventory _product;
         public form_viewProducts(Inventory product)
         {
             _product = product;
-            this.f1 = f1;
             InitializeComponent();
         }
 
