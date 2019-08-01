@@ -118,6 +118,7 @@
     <Content Include="Images\ProLiteGE2488HS-B1.png" />
     <Content Include="Images\Properties of Inventory Item.png" />
     <Content Include="Images\Samsung - CHG90.png" />
+    <Content Include="removedInventory.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

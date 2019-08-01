@@ -13,8 +13,7 @@ namespace Milestone
 {
     public partial class form_products : Form
     {
-
-        Inventory[] inv;
+        Inventory[] inv = InventoryManager.Load();
 
         public form_products()
         {
@@ -29,8 +28,6 @@ namespace Milestone
             }
             if (lb_products.SelectedIndex != 0)
             {
-                InventoryManager im = new InventoryManager();
-                inv = im.Load();
                 int index = lb_products.SelectedIndex;
                 Inventory product = inv[index - 1];
                 form_viewProducts f2 = new form_viewProducts(product);
@@ -46,19 +43,34 @@ namespace Milestone
 
         private void Btn_exit_Click(object sender, EventArgs e)
         {
+            InventoryManager im = new InventoryManager();
+            im.Save(inv);
             this.Close();
         }
 
         private void Btn_removeProduct_Click(object sender, EventArgs e)
         {
+            InventoryManager im = new InventoryManager();
+
+            if (lb_products.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please select a valid product...");
+            }
+            if (lb_products.SelectedIndex != 0)
+            {
+                int index = lb_products.SelectedIndex - 1;
+                Inventory product = inv[index];
+                lb_products.Items.Remove(lb_products.SelectedItem);
+                inv = im.Remove(inv, index);
+                lb_products.Refresh();
+                im.Remove(product);
+            }
             MessageBox.Show("Removed Item");
         }
 
         private void Form_products_Load(object sender, EventArgs e)
         {
-            lb_products.Items.Add("Stock" + "\t" + "Model");
-            InventoryManager im = new InventoryManager();
-            inv = im.Load();
+            lb_products.Items.Add("Stock" + "\t" + "Model");;
             for (int x = 0; x < inv.Length; x++) 
             {
                 lb_products.Items.Add(inv[x].Stock + "\t" + inv[x].Model);

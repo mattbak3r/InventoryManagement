@@ -14,6 +14,7 @@ namespace Milestone
     {
         
         private Inventory _product;
+
         public form_viewProducts(Inventory product)
         {
             _product = product;

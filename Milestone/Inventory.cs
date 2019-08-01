@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Milestone
 {
-    public class Inventory
+    public class Inventory : IComparable
     {
         private int id;
         private String name;
@@ -29,6 +29,7 @@ namespace Milestone
             resolution = aResolution;
             picture = aPicture;
         }
+
         
         public int Id
         {
@@ -79,5 +80,9 @@ namespace Milestone
             set { picture = value; }
         }
 
+        public int CompareTo(object obj)
+        {
+            return id.CompareTo(obj);
+        }
     }
 }
