@@ -8,6 +8,7 @@ namespace Milestone
 {
     static class Program
     {
+        static Inventory[] inv = InventoryManager.Load();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +17,7 @@ namespace Milestone
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form_products());
+            Application.Run(new form_products(inv));
         }
     }
 }

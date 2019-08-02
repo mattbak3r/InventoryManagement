@@ -95,7 +95,7 @@ namespace Milestone
                 inv2[x] = inv[x];
                 x++;
             }
-            inv2[size + 1] = product;
+            inv2[size] = product;
             return inv2;
         }
 

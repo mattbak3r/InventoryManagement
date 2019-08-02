@@ -13,9 +13,11 @@ namespace Milestone
     public partial class form_edit : Form
     {
         Inventory _product;
-        public form_edit(Inventory product)
+        Inventory[] _inv;
+        public form_edit(Inventory product, Inventory[] inventories)
         {
             _product = product;
+            _inv = inventories;
             InitializeComponent();
         }
 
@@ -41,15 +43,19 @@ namespace Milestone
             _product.Resolution = tb_resolution.Text;
             _product.Picture = tb_picture.Text;
             _product.Price = double.Parse(tb_price.Text);
-            this.Close();
+            this.Hide();
             MessageBox.Show("Product updated");
+            var _form = new form_products(_inv);
+            _form.FormClosed += (x, args) => this.Close();
+            _form.Show();
         }
 
         private void Btn_cancel_Click(object sender, EventArgs e)
         {
-            this.Close();
-            form_viewProducts _form = new form_viewProducts(_product);
-            _form.ShowDialog();
+            this.Hide();
+            var _form = new form_products(_inv);
+            _form.FormClosed += (x, args) => this.Close();
+            _form.Show();
         }
     }
 }

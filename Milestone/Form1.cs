@@ -14,8 +14,16 @@ namespace Milestone
     {
         static Inventory[] inv = InventoryManager.Load();
 
-        public form_products()
+        public form_products(Inventory[] _inv)
         {
+            if (_inv.Length == 0)
+            {
+                _inv = inv;
+            }
+            else
+            {
+                inv = _inv;
+            }
             InitializeComponent();
         }
 
@@ -29,15 +37,19 @@ namespace Milestone
             {
                 int index = lb_products.SelectedIndex;
                 Inventory product = inv[index - 1];
-                form_viewProducts f2 = new form_viewProducts(product);
-                f2.ShowDialog(); // Shows Form2
+                this.Hide();
+                form_viewProducts f2 = new form_viewProducts(product, inv);
+                f2.FormClosed += (x, args) => this.Close();
+                f2.Show(); // Shows Form2
             }
         }
 
         private void Btn_addNewProduct_Click(object sender, EventArgs e)
         {
+            this.Hide();
             form_addProduct f3 = new form_addProduct(inv);
-            f3.ShowDialog();
+            f3.FormClosed += (s, args) => this.Close();
+            f3.Show();
         }
 
         private void Btn_exit_Click(object sender, EventArgs e)

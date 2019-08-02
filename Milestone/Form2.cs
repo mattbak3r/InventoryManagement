@@ -14,10 +14,12 @@ namespace Milestone
     {
         
         private Inventory _product;
+        private Inventory[] _inv;
 
-        public form_viewProducts(Inventory product)
+        public form_viewProducts(Inventory product, Inventory[] inventories)
         {
             _product = product;
+            _inv = inventories;
             InitializeComponent();
         }
 
@@ -35,7 +37,10 @@ namespace Milestone
 
         private void Btn_back_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            var f1 = new form_products(_inv);
+            f1.FormClosed += (x, args) => this.Close();
+            f1.Show();
         }
 
         private void Btn_order_Click(object sender, EventArgs e)
@@ -45,8 +50,10 @@ namespace Milestone
 
         private void Btn_edit_Click(object sender, EventArgs e)
         {
-            form_edit _formEdit = new form_edit(_product);
-            _formEdit.ShowDialog();
+            this.Hide();
+            var _formEdit = new form_edit(_product, _inv);
+            _formEdit.FormClosed += (x, args) => this.Close();
+            _formEdit.Show();
         }
     }
 }
