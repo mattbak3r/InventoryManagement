@@ -13,7 +13,7 @@ namespace Milestone
     public partial class form_products : Form
     {
         static Inventory[] inv = InventoryManager.Load();
-
+        String searchPhrase;
         public form_products(Inventory[] _inv)
         {
             if (_inv.Length == 0)
@@ -85,6 +85,30 @@ namespace Milestone
             for (int x = 0; x < inv.Length; x++) 
             {
                 lb_products.Items.Add(inv[x].Stock + "\t" + inv[x].Model);
+            }
+        }
+
+        private void Btn_search_Click(object sender, EventArgs e)
+        {
+            
+
+            if (rad_brand.Enabled)
+            {
+                try
+                {
+                    String searchPhrase = tb_searchBar.Text.ToLower();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                for (int i = 0; i < inv.Length; i++)
+                {
+                    if (searchPhrase == inv[i].Name.ToLower())
+                    {
+
+                    }
+                }
             }
         }
     }
