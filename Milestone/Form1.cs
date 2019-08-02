@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace Milestone
 {
     public partial class form_products : Form
     {
-        Inventory[] inv = InventoryManager.Load();
+        static Inventory[] inv = InventoryManager.Load();
 
         public form_products()
         {
@@ -26,7 +25,7 @@ namespace Milestone
             {
                 MessageBox.Show("Please select a valid product...");
             }
-            if (lb_products.SelectedIndex != 0)
+            if (lb_products.SelectedIndex > 0)
             {
                 int index = lb_products.SelectedIndex;
                 Inventory product = inv[index - 1];
@@ -37,7 +36,7 @@ namespace Milestone
 
         private void Btn_addNewProduct_Click(object sender, EventArgs e)
         {
-            form_addProduct f3 = new form_addProduct();
+            form_addProduct f3 = new form_addProduct(inv);
             f3.ShowDialog();
         }
 
@@ -75,10 +74,6 @@ namespace Milestone
             {
                 lb_products.Items.Add(inv[x].Stock + "\t" + inv[x].Model);
             }
-        }
-        public Inventory GetSelection
-        {
-            get { return (Inventory)lb_products.SelectedItem; }
         }
     }
 }

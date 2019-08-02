@@ -37,13 +37,19 @@ namespace Milestone
             _product.Name = tb_brand.Text;
             _product.Model = tb_model.Text;
             _product.Stock = int.Parse(tb_stock.Text);
-            _product.Size = int.Parse(tb_size.Text);
+            _product.Size = double.Parse(tb_size.Text);
             _product.Resolution = tb_resolution.Text;
             _product.Picture = tb_picture.Text;
             _product.Price = double.Parse(tb_price.Text);
             this.Close();
             MessageBox.Show("Product updated");
+        }
 
+        private void Btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            form_viewProducts _form = new form_viewProducts(_product);
+            _form.ShowDialog();
         }
     }
 }

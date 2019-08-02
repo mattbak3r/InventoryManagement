@@ -81,12 +81,27 @@ namespace Milestone
                 inv2[index] = inv[index + 1];
                 index++;
             }
-            
-
             return inv2;
         }
+
+        public Inventory[] Add(Inventory[] inv, Inventory product)
+        {
+            int size = inv.Length;
+            Inventory[] inv2 = new Inventory[size + 1];
+            int x = 0;
+
+            while (x < size)
+            {
+                inv2[x] = inv[x];
+                x++;
+            }
+            inv2[size + 1] = product;
+            return inv2;
+        }
+
         public void Save(Inventory[] inv)
         {
+            Array.Sort(inv);
             try
             {
                 File.WriteAllText("../../inventory.txt", string.Empty);
