@@ -69,7 +69,7 @@ namespace Milestone
 
         private void Form_products_Load(object sender, EventArgs e)
         {
-            lb_products.Items.Add("Stock" + "\t" + "Model");;
+            lb_products.Items.Add("Stock" + "\t" + "Model");
             for (int x = 0; x < inv.Length; x++) 
             {
                 lb_products.Items.Add(inv[x].Stock + "\t" + inv[x].Model);
