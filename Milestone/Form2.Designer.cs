@@ -248,6 +248,7 @@
             this.Controls.Add(this.lb_stock);
             this.Controls.Add(this.lb_name);
             this.Name = "form_viewProducts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Product";
             this.Load += new System.EventHandler(this.Form_viewProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_productPicture)).EndInit();

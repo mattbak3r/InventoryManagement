@@ -236,6 +236,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lb_name);
             this.Name = "form_addProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Product";
             this.Load += new System.EventHandler(this.Form_addProduct_Load);
             this.ResumeLayout(false);
