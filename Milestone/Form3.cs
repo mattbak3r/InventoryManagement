@@ -12,7 +12,8 @@ namespace Milestone
 {
     public partial class form_addProduct : Form
     {
-        readonly Inventory[] inv;
+        Inventory[] inv;
+        int id;
         public form_addProduct(Inventory[] inventory)
         {
             inv = inventory;
@@ -21,13 +22,18 @@ namespace Milestone
 
         private void Btn_back_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            var f1 = new form_products(inv);
+            f1.FormClosed += (x, args) => this.Close();
+            f1.Show();
         }
 
         private void Btn_add_Click(object sender, EventArgs e)
         {
+
+            
             InventoryManager im = new InventoryManager();
-            int _Id = int.Parse(tb_ID.Text);
+            //int _Id = int.Parse(tb_ID.Text);
             string _Model = tb_productModel.Text;
             string _Name = tb_productName.Text;
             string _Picture = tb_productPicture.Text;
@@ -35,9 +41,26 @@ namespace Milestone
             string _Resolution = tb_productScreenResolution.Text;
             double _Size = double.Parse(tb_productScreenSize.Text);
             int _Stock = int.Parse(tb_productStock.Text);
-            Inventory product = new Inventory(_Id, _Name, _Model, _Stock, _Price, _Size, _Resolution, _Picture);
-            //im.Add(inv, product);
+            Inventory product = new Inventory(id, _Name, _Model, _Stock, _Price, _Size, _Resolution, _Picture);
+            inv = im.Add(inv, product);
             MessageBox.Show("Product Added.");
+            this.Hide();
+            var f1 = new form_products(inv);
+            f1.FormClosed += (x, args) => this.Close();
+            f1.Show();
+        }
+
+        private void Form_addProduct_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < inv.Length; i++)
+            {
+                if (inv[i].Id != i + 1)
+                {
+                    id = i + 1;
+                    break;
+                }
+            }
+            tb_ID.Text = id.ToString();
         }
     }
 }

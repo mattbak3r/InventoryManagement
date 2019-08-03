@@ -36,6 +36,12 @@
             this.btn_removeProduct = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.rad_brand = new System.Windows.Forms.RadioButton();
+            this.rad_model = new System.Windows.Forms.RadioButton();
+            this.rad_price = new System.Windows.Forms.RadioButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lb_products
@@ -53,19 +59,20 @@
             // 
             // tb_searchBar
             // 
-            this.tb_searchBar.Location = new System.Drawing.Point(13, 60);
+            this.tb_searchBar.Location = new System.Drawing.Point(6, 32);
             this.tb_searchBar.Name = "tb_searchBar";
-            this.tb_searchBar.Size = new System.Drawing.Size(100, 20);
+            this.tb_searchBar.Size = new System.Drawing.Size(85, 20);
             this.tb_searchBar.TabIndex = 1;
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(120, 60);
+            this.btn_search.Location = new System.Drawing.Point(7, 127);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(75, 23);
             this.btn_search.TabIndex = 2;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.Btn_search_Click);
             // 
             // btn_addNewProduct
             // 
@@ -108,7 +115,7 @@
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
             this.btn_exit.TabIndex = 6;
-            this.btn_exit.Text = "Exit";
+            this.btn_exit.Text = "Save / Exit";
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.Btn_exit_Click);
             // 
@@ -122,23 +129,81 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Inventory for Monitor Products";
             // 
+            // rad_brand
+            // 
+            this.rad_brand.AutoSize = true;
+            this.rad_brand.Location = new System.Drawing.Point(7, 58);
+            this.rad_brand.Name = "rad_brand";
+            this.rad_brand.Size = new System.Drawing.Size(53, 17);
+            this.rad_brand.TabIndex = 8;
+            this.rad_brand.TabStop = true;
+            this.rad_brand.Text = "Brand";
+            this.rad_brand.UseVisualStyleBackColor = true;
+            // 
+            // rad_model
+            // 
+            this.rad_model.AutoSize = true;
+            this.rad_model.Location = new System.Drawing.Point(6, 81);
+            this.rad_model.Name = "rad_model";
+            this.rad_model.Size = new System.Drawing.Size(54, 17);
+            this.rad_model.TabIndex = 8;
+            this.rad_model.TabStop = true;
+            this.rad_model.Text = "Model";
+            this.rad_model.UseVisualStyleBackColor = true;
+            // 
+            // rad_price
+            // 
+            this.rad_price.AutoSize = true;
+            this.rad_price.Location = new System.Drawing.Point(6, 104);
+            this.rad_price.Name = "rad_price";
+            this.rad_price.Size = new System.Drawing.Size(49, 17);
+            this.rad_price.TabIndex = 8;
+            this.rad_price.TabStop = true;
+            this.rad_price.Text = "Price";
+            this.rad_price.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 59);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tb_searchBar);
+            this.groupBox1.Controls.Add(this.btn_search);
+            this.groupBox1.Controls.Add(this.rad_price);
+            this.groupBox1.Controls.Add(this.rad_brand);
+            this.groupBox1.Controls.Add(this.rad_model);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(344, 86);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(94, 157);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search Products";
+            // 
             // form_products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 426);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_removeProduct);
             this.Controls.Add(this.btn_viewProduct);
             this.Controls.Add(this.btn_addNewProduct);
-            this.Controls.Add(this.btn_search);
-            this.Controls.Add(this.tb_searchBar);
             this.Controls.Add(this.lb_products);
             this.Name = "form_products";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Products";
             this.Load += new System.EventHandler(this.Form_products_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +219,11 @@
         private System.Windows.Forms.Button btn_removeProduct;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rad_brand;
+        private System.Windows.Forms.RadioButton rad_model;
+        private System.Windows.Forms.RadioButton rad_price;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

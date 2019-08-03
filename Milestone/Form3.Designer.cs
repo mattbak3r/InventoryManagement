@@ -108,42 +108,42 @@
             this.tb_productName.Location = new System.Drawing.Point(137, 69);
             this.tb_productName.Name = "tb_productName";
             this.tb_productName.Size = new System.Drawing.Size(100, 20);
-            this.tb_productName.TabIndex = 10;
+            this.tb_productName.TabIndex = 11;
             // 
             // tb_productStock
             // 
             this.tb_productStock.Location = new System.Drawing.Point(137, 121);
             this.tb_productStock.Name = "tb_productStock";
             this.tb_productStock.Size = new System.Drawing.Size(100, 20);
-            this.tb_productStock.TabIndex = 11;
+            this.tb_productStock.TabIndex = 13;
             // 
             // tb_productPrice
             // 
             this.tb_productPrice.Location = new System.Drawing.Point(137, 149);
             this.tb_productPrice.Name = "tb_productPrice";
             this.tb_productPrice.Size = new System.Drawing.Size(100, 20);
-            this.tb_productPrice.TabIndex = 12;
+            this.tb_productPrice.TabIndex = 14;
             // 
             // tb_productScreenSize
             // 
             this.tb_productScreenSize.Location = new System.Drawing.Point(137, 176);
             this.tb_productScreenSize.Name = "tb_productScreenSize";
             this.tb_productScreenSize.Size = new System.Drawing.Size(100, 20);
-            this.tb_productScreenSize.TabIndex = 13;
+            this.tb_productScreenSize.TabIndex = 15;
             // 
             // tb_productScreenResolution
             // 
             this.tb_productScreenResolution.Location = new System.Drawing.Point(137, 202);
             this.tb_productScreenResolution.Name = "tb_productScreenResolution";
             this.tb_productScreenResolution.Size = new System.Drawing.Size(100, 20);
-            this.tb_productScreenResolution.TabIndex = 14;
+            this.tb_productScreenResolution.TabIndex = 16;
             // 
             // btn_add
             // 
             this.btn_add.Location = new System.Drawing.Point(93, 303);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
-            this.btn_add.TabIndex = 15;
+            this.btn_add.TabIndex = 18;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.Btn_add_Click);
@@ -153,7 +153,7 @@
             this.btn_back.Location = new System.Drawing.Point(231, 303);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(75, 23);
-            this.btn_back.TabIndex = 16;
+            this.btn_back.TabIndex = 19;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.Btn_back_Click);
@@ -163,14 +163,14 @@
             this.tb_productModel.Location = new System.Drawing.Point(137, 95);
             this.tb_productModel.Name = "tb_productModel";
             this.tb_productModel.Size = new System.Drawing.Size(100, 20);
-            this.tb_productModel.TabIndex = 10;
+            this.tb_productModel.TabIndex = 12;
             // 
             // tb_productPicture
             // 
             this.tb_productPicture.Location = new System.Drawing.Point(137, 228);
             this.tb_productPicture.Name = "tb_productPicture";
             this.tb_productPicture.Size = new System.Drawing.Size(100, 20);
-            this.tb_productPicture.TabIndex = 10;
+            this.tb_productPicture.TabIndex = 17;
             // 
             // label1
             // 
@@ -237,6 +237,7 @@
             this.Controls.Add(this.lb_name);
             this.Name = "form_addProduct";
             this.Text = "Add Product";
+            this.Load += new System.EventHandler(this.Form_addProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
