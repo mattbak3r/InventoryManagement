@@ -41,7 +41,6 @@
             this.lb_productPrice = new System.Windows.Forms.Label();
             this.lb_productScreenSize = new System.Windows.Forms.Label();
             this.lb_productScreenResolution = new System.Windows.Forms.Label();
-            this.btn_order = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
             this.lb_model = new System.Windows.Forms.Label();
@@ -176,19 +175,9 @@
             this.lb_productScreenResolution.TabIndex = 17;
             this.lb_productScreenResolution.Text = "Product Screen Resolution";
             // 
-            // btn_order
-            // 
-            this.btn_order.Location = new System.Drawing.Point(55, 363);
-            this.btn_order.Name = "btn_order";
-            this.btn_order.Size = new System.Drawing.Size(75, 23);
-            this.btn_order.TabIndex = 18;
-            this.btn_order.Text = "Order";
-            this.btn_order.UseVisualStyleBackColor = true;
-            this.btn_order.Click += new System.EventHandler(this.Btn_order_Click);
-            // 
             // btn_edit
             // 
-            this.btn_edit.Location = new System.Drawing.Point(162, 363);
+            this.btn_edit.Location = new System.Drawing.Point(112, 364);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(75, 23);
             this.btn_edit.TabIndex = 19;
@@ -198,7 +187,7 @@
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(273, 363);
+            this.btn_back.Location = new System.Drawing.Point(223, 364);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(75, 23);
             this.btn_back.TabIndex = 20;
@@ -233,7 +222,6 @@
             this.Controls.Add(this.lb_model);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_edit);
-            this.Controls.Add(this.btn_order);
             this.Controls.Add(this.lb_productScreenResolution);
             this.Controls.Add(this.lb_productScreenSize);
             this.Controls.Add(this.lb_productPrice);
@@ -272,7 +260,6 @@
         private System.Windows.Forms.Label lb_productPrice;
         private System.Windows.Forms.Label lb_productScreenSize;
         private System.Windows.Forms.Label lb_productScreenResolution;
-        private System.Windows.Forms.Button btn_order;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Label lb_model;

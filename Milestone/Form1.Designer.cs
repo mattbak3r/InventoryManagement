@@ -41,6 +41,7 @@
             this.rad_price = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_reset = new System.Windows.Forms.Button();
+            this.btn_orderProduct = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -189,11 +190,22 @@
             this.btn_reset.UseVisualStyleBackColor = true;
             this.btn_reset.Click += new System.EventHandler(this.Btn_reset_Click);
             // 
+            // btn_orderProduct
+            // 
+            this.btn_orderProduct.Location = new System.Drawing.Point(621, 267);
+            this.btn_orderProduct.Name = "btn_orderProduct";
+            this.btn_orderProduct.Size = new System.Drawing.Size(75, 23);
+            this.btn_orderProduct.TabIndex = 12;
+            this.btn_orderProduct.Text = "Order";
+            this.btn_orderProduct.UseVisualStyleBackColor = true;
+            this.btn_orderProduct.Click += new System.EventHandler(this.Btn_orderProduct_Click);
+            // 
             // form_products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 421);
+            this.Controls.Add(this.btn_orderProduct);
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -228,6 +240,7 @@
         private System.Windows.Forms.RadioButton rad_price;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_reset;
+        private System.Windows.Forms.Button btn_orderProduct;
     }
 }
 

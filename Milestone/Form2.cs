@@ -43,11 +43,6 @@ namespace Milestone
             f1.Show();
         }
 
-        private void Btn_order_Click(object sender, EventArgs e)
-        {
-            //order products
-        }
-
         private void Btn_edit_Click(object sender, EventArgs e)
         {
             this.Hide();

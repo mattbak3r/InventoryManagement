@@ -30,7 +30,11 @@ namespace Milestone
             picture = aPicture;
         }
 
-        
+        public override String ToString()
+        {
+            return Stock + "\t$" + Price + "\t" + Name + "\t" + Model;
+        }
+
         public int Id
         {
             get { return id; }
