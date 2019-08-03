@@ -39,8 +39,8 @@
             this.rad_brand = new System.Windows.Forms.RadioButton();
             this.rad_model = new System.Windows.Forms.RadioButton();
             this.rad_price = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_reset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@
             this.lb_products.ItemHeight = 19;
             this.lb_products.Location = new System.Drawing.Point(12, 86);
             this.lb_products.Name = "lb_products";
-            this.lb_products.Size = new System.Drawing.Size(326, 327);
+            this.lb_products.Size = new System.Drawing.Size(602, 308);
             this.lb_products.TabIndex = 0;
             // 
             // tb_searchBar
@@ -77,7 +77,7 @@
             // btn_addNewProduct
             // 
             this.btn_addNewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_addNewProduct.Location = new System.Drawing.Point(345, 301);
+            this.btn_addNewProduct.Location = new System.Drawing.Point(621, 296);
             this.btn_addNewProduct.Name = "btn_addNewProduct";
             this.btn_addNewProduct.Size = new System.Drawing.Size(75, 23);
             this.btn_addNewProduct.TabIndex = 3;
@@ -89,7 +89,7 @@
             // 
             this.btn_viewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_viewProduct.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btn_viewProduct.Location = new System.Drawing.Point(345, 362);
+            this.btn_viewProduct.Location = new System.Drawing.Point(621, 357);
             this.btn_viewProduct.Name = "btn_viewProduct";
             this.btn_viewProduct.Size = new System.Drawing.Size(75, 23);
             this.btn_viewProduct.TabIndex = 4;
@@ -100,7 +100,7 @@
             // btn_removeProduct
             // 
             this.btn_removeProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_removeProduct.Location = new System.Drawing.Point(345, 331);
+            this.btn_removeProduct.Location = new System.Drawing.Point(621, 326);
             this.btn_removeProduct.Name = "btn_removeProduct";
             this.btn_removeProduct.Size = new System.Drawing.Size(75, 23);
             this.btn_removeProduct.TabIndex = 5;
@@ -111,7 +111,7 @@
             // btn_exit
             // 
             this.btn_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_exit.Location = new System.Drawing.Point(345, 391);
+            this.btn_exit.Location = new System.Drawing.Point(621, 386);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
             this.btn_exit.TabIndex = 6;
@@ -162,36 +162,40 @@
             this.rad_price.Text = "Price";
             this.rad_price.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
-            // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.tb_searchBar);
             this.groupBox1.Controls.Add(this.btn_search);
             this.groupBox1.Controls.Add(this.rad_price);
             this.groupBox1.Controls.Add(this.rad_brand);
             this.groupBox1.Controls.Add(this.rad_model);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(344, 86);
+            this.groupBox1.Location = new System.Drawing.Point(620, 81);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(94, 157);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Products";
             // 
+            // btn_reset
+            // 
+            this.btn_reset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_reset.Location = new System.Drawing.Point(620, 52);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(27, 23);
+            this.btn_reset.TabIndex = 11;
+            this.btn_reset.Text = "R";
+            this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.Btn_reset_Click);
+            // 
             // form_products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 426);
+            this.ClientSize = new System.Drawing.Size(717, 421);
+            this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_removeProduct);
@@ -222,8 +226,8 @@
         private System.Windows.Forms.RadioButton rad_brand;
         private System.Windows.Forms.RadioButton rad_model;
         private System.Windows.Forms.RadioButton rad_price;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btn_reset;
     }
 }
 
