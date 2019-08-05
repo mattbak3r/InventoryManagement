@@ -220,6 +220,7 @@
             this.pb_image.Location = new System.Drawing.Point(137, 254);
             this.pb_image.Name = "pb_image";
             this.pb_image.Size = new System.Drawing.Size(154, 131);
+            this.pb_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_image.TabIndex = 20;
             this.pb_image.TabStop = false;
             // 

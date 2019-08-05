@@ -43,8 +43,10 @@ namespace Milestone
             _product.Resolution = tb_resolution.Text;
             _product.Picture = tb_picture.Text;
             _product.Price = double.Parse(tb_price.Text);
-            this.Hide();
+            InventoryManager im = new InventoryManager();
+            im.Save(_inv);
             MessageBox.Show("Product updated");
+            this.Hide();
             var _form = new form_products(_inv);
             _form.FormClosed += (x, args) => this.Close();
             _form.Show();

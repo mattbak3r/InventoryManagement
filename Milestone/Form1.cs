@@ -91,8 +91,9 @@ namespace Milestone
                     inv = im.Remove(inv, index);
                     lb_products.Refresh();
                     im.Remove(product);
+                    im.Save(inv);
+                    MessageBox.Show("Removed Item");
                 }
-                MessageBox.Show("Removed Item");
             }
         }
 
