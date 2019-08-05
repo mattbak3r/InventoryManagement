@@ -8,12 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * Matthew Baker
+ * CST-117
+ * Dominga Gardner
+ */
 namespace Milestone
 {
     public partial class form_products : Form
     {
         static Inventory[] inv = InventoryManager.Load();
         List<Inventory> invSearch = new List<Inventory>();
+
         public form_products(Inventory[] _inv)
         {
             if (_inv.Length == 0)
@@ -27,6 +33,7 @@ namespace Milestone
             InitializeComponent();
         }
 
+        //Opens new form to view product details.
         private void Btn_viewProduct_Click(object sender, EventArgs e)
         {
             
@@ -57,6 +64,7 @@ namespace Milestone
             }
         }
 
+        //Opens new form to add more products
         private void Btn_addNewProduct_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -65,6 +73,7 @@ namespace Milestone
             f3.Show();
         }
 
+        //Closes the application and saves the Inventory Array to notepad
         private void Btn_exit_Click(object sender, EventArgs e)
         {
             InventoryManager im = new InventoryManager();
@@ -72,6 +81,7 @@ namespace Milestone
             this.Close();
         }
 
+        //Removes product from listbox, and Inventory Array, then saves the product in removedInventory.txt and updates inventory.txt
         private void Btn_removeProduct_Click(object sender, EventArgs e)
         {
             InventoryManager im = new InventoryManager();
@@ -97,6 +107,7 @@ namespace Milestone
             }
         }
 
+        //Loads inventory.txt to an inventory array then displays the objects in the list box.
         private void Form_products_Load(object sender, EventArgs e)
         {
             lb_products.Items.Add("ID" + "\t" + "Stock" + "\t" + "Price" + "\t" + "Name" + "\t" + "Model");
@@ -106,6 +117,8 @@ namespace Milestone
             }
         }
 
+        //Adds a search functionality, user selects what they want to search from (price, brand, model)
+        //A new List is created and filled with matching  terms then displayed in the listbox
         private void Btn_search_Click(object sender, EventArgs e)
         {
             lb_products.Items.Clear();
@@ -193,6 +206,7 @@ namespace Milestone
             }
         }
 
+        //Clears search term and reloads inventory list box
         private void Btn_reset_Click(object sender, EventArgs e)
         {
             lb_products.Items.Clear();
@@ -204,6 +218,7 @@ namespace Milestone
             }
         }
 
+        //Opens a new form that allows the user to order more products
         private void Btn_orderProduct_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -21,6 +21,7 @@ namespace Milestone
             InitializeComponent();
         }
 
+        //Loads all the current information into text boxes for the user to edit.
         private void EditForm_Load(object sender, EventArgs e)
         {
             tb_id.Text = _product.Id.ToString();
@@ -33,6 +34,7 @@ namespace Milestone
             tb_price.Text = _product.Price.ToString();
         }
 
+        //Saves all the information the user changed to the current product
         private void Btn_save_Click(object sender, EventArgs e)
         {
             _product.Id = int.Parse(tb_id.Text);
@@ -52,6 +54,7 @@ namespace Milestone
             _form.Show();
         }
 
+        //Goes back to last form.
         private void Btn_cancel_Click(object sender, EventArgs e)
         {
             this.Hide();

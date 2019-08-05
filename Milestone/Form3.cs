@@ -21,6 +21,7 @@ namespace Milestone
             InitializeComponent();
         }
 
+        //Goes back to main form
         private void Btn_back_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -29,6 +30,7 @@ namespace Milestone
             f1.Show();
         }
 
+        //Takes information provided and builds a new Inventory object, then saves it into the Inventory array
         private void Btn_add_Click(object sender, EventArgs e)
         {
             InventoryManager im = new InventoryManager();
@@ -49,6 +51,7 @@ namespace Milestone
             f1.Show();
         }
 
+        //Finds the next available ID number, to assign new product an ID not being used
         private void Form_addProduct_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < inv.Length; i++)
@@ -58,10 +61,15 @@ namespace Milestone
                     id = i + 1;
                     break;
                 }
+                else
+                {
+                    id = inv.Length + 1;
+                }
             }
             tb_ID.Text = id.ToString();
         }
         
+        //Uploads a picture, then saves a copy of it into Images file
         private void Btn_upload_Click(object sender, EventArgs e)
         {
             OpenFileDialog o = new OpenFileDialog

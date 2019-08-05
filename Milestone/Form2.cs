@@ -23,6 +23,7 @@ namespace Milestone
             InitializeComponent();
         }
 
+        //Loads all information to text lables, and shows a picture of the product
         private void Form_viewProducts_Load(object sender, EventArgs e)
         {
             pb_productPicture.Image = Image.FromFile("../../Images/" + _product.Picture);
@@ -35,6 +36,7 @@ namespace Milestone
             lb_productModel.Text = _product.Model;
         }
 
+        //Goes back to last form
         private void Btn_back_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -43,6 +45,7 @@ namespace Milestone
             f1.Show();
         }
 
+        //Opens a new form that allows the user to edit the product
         private void Btn_edit_Click(object sender, EventArgs e)
         {
             this.Hide();

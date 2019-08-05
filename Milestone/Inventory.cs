@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace Milestone
 {
@@ -84,6 +83,7 @@ namespace Milestone
             set { picture = value; }
         }
 
+        //Added to give sorting functionality by ID
         public int CompareTo(Inventory obj)
         {
             return this.id.CompareTo(obj.id);

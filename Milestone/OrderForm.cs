@@ -21,6 +21,7 @@ namespace Milestone
             InitializeComponent();
         }
 
+        //Adds the Inventory Array to list box for user to select and order
         private void Form_order_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < inv.Length; i++)
@@ -29,6 +30,7 @@ namespace Milestone
             }
         }
 
+        //Clears the order list box
         private void Btn_clear_Click(object sender, EventArgs e)
         {
             lb_orderedProducts.Items.Clear();
@@ -36,6 +38,7 @@ namespace Milestone
             totalPrice = 0;
         }
 
+        //Adds selected item to new order listbox (add more than one to order more than one of the same product)
         private void Btn_add_Click(object sender, EventArgs e)
         {
             int index = lb_allProducts.SelectedIndex;
@@ -49,6 +52,7 @@ namespace Milestone
             }
         }
 
+        //Remove selected product from order listbox
         private void Btn_remove_Click(object sender, EventArgs e)
         {
             int index = lb_orderedProducts.SelectedIndex;
@@ -62,19 +66,23 @@ namespace Milestone
             }
         }
 
+        //Orders the product in the order list box
         private void Btn_order_Click(object sender, EventArgs e)
         {
+            InventoryManager im = new InventoryManager();
             for (int i = 0; i < order.Count; i++)
             {
                 order[i].Stock = order[i].Stock + 1;
             }
-            MessageBox.Show("Products Order for " + totalPrice.ToString("C2"));
+            im.Save(inv);
+            MessageBox.Show("Products Ordered for " + totalPrice.ToString("C2"));
             this.Hide();
             var f1 = new form_products(inv);
             f1.FormClosed += (x, args) => this.Close();
             f1.Show();
         }
 
+        //Cancels the order
         private void Btn_cancel_Click(object sender, EventArgs e)
         {
             this.Hide();

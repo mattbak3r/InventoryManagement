@@ -9,6 +9,7 @@ namespace Milestone
 {
     class InventoryManager
     {
+        //Loads inventory into an Array (later needs to be changed to List)
         public static Inventory[] Load()
         {
             try
@@ -37,6 +38,7 @@ namespace Milestone
             }
         }
 
+        //Adds removed product to a removedProduct.txt file
         public void Remove(Inventory product)
         {
             try
@@ -65,6 +67,8 @@ namespace Milestone
             }
         }
 
+        //Removes the product from the inventory array by creating a new array with -1 spots
+        //Loading new array with old spots up to index, then loads next to end (skipping entered index)
         public Inventory[] Remove(Inventory[] inv, int index)
         {
             int size = inv.Length;
@@ -84,6 +88,7 @@ namespace Milestone
             return inv2;
         }
 
+        //Creates a new array with +1 items, copies old array to new array and adds new product to extra slot to be returned
         public Inventory[] Add(Inventory[] inv, Inventory product)
         {
             int size = inv.Length;
@@ -99,6 +104,7 @@ namespace Milestone
             return inv2;
         }
 
+        //Saves Inventory array to inventory.txt file, after sorting it by id number (lowest to highest)
         public void Save(Inventory[] inv)
         {
             Array.Sort(inv);
