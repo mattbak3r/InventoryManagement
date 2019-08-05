@@ -46,6 +46,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_ID = new System.Windows.Forms.TextBox();
+            this.pb_image = new System.Windows.Forms.PictureBox();
+            this.btn_upload = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_image)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_screenResolution
@@ -140,7 +143,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(93, 303);
+            this.btn_add.Location = new System.Drawing.Point(93, 391);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 18;
@@ -150,7 +153,7 @@
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(231, 303);
+            this.btn_back.Location = new System.Drawing.Point(231, 391);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(75, 23);
             this.btn_back.TabIndex = 19;
@@ -212,11 +215,31 @@
             this.tb_ID.Size = new System.Drawing.Size(100, 20);
             this.tb_ID.TabIndex = 10;
             // 
+            // pb_image
+            // 
+            this.pb_image.Location = new System.Drawing.Point(137, 254);
+            this.pb_image.Name = "pb_image";
+            this.pb_image.Size = new System.Drawing.Size(154, 131);
+            this.pb_image.TabIndex = 20;
+            this.pb_image.TabStop = false;
+            // 
+            // btn_upload
+            // 
+            this.btn_upload.Location = new System.Drawing.Point(244, 224);
+            this.btn_upload.Name = "btn_upload";
+            this.btn_upload.Size = new System.Drawing.Size(75, 23);
+            this.btn_upload.TabIndex = 21;
+            this.btn_upload.Text = "Upload";
+            this.btn_upload.UseVisualStyleBackColor = true;
+            this.btn_upload.Click += new System.EventHandler(this.Btn_upload_Click);
+            // 
             // form_addProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 426);
+            this.Controls.Add(this.btn_upload);
+            this.Controls.Add(this.pb_image);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.tb_productScreenResolution);
@@ -239,6 +262,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Product";
             this.Load += new System.EventHandler(this.Form_addProduct_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,5 +288,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tb_ID;
+        private System.Windows.Forms.PictureBox pb_image;
+        private System.Windows.Forms.Button btn_upload;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Milestone
 {
@@ -30,10 +31,7 @@ namespace Milestone
 
         private void Btn_add_Click(object sender, EventArgs e)
         {
-
-            
             InventoryManager im = new InventoryManager();
-            //int _Id = int.Parse(tb_ID.Text);
             string _Model = tb_productModel.Text;
             string _Name = tb_productName.Text;
             string _Picture = tb_productPicture.Text;
@@ -43,6 +41,7 @@ namespace Milestone
             int _Stock = int.Parse(tb_productStock.Text);
             Inventory product = new Inventory(id, _Name, _Model, _Stock, _Price, _Size, _Resolution, _Picture);
             inv = im.Add(inv, product);
+            im.Save(inv);
             MessageBox.Show("Product Added.");
             this.Hide();
             var f1 = new form_products(inv);
@@ -61,6 +60,24 @@ namespace Milestone
                 }
             }
             tb_ID.Text = id.ToString();
+        }
+        
+        private void Btn_upload_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog o = new OpenFileDialog
+            {
+                Filter = "Image Files(*.jpg; *.png;)| *.jpg; *.png;"
+            };
+            if (o.ShowDialog() == DialogResult.OK)
+            {
+                tb_productPicture.Text = Path.GetFileName(o.FileName);
+                String file = "../../Images/" + Path.GetFileName(o.FileName);
+                pb_image.Image = new Bitmap(o.FileName);
+                if (!File.Exists(file))
+                {
+                    File.Copy(o.FileName, Path.Combine("../../Images/", Path.GetFileName(tb_productPicture.Text)), true);
+                }
+            }
         }
     }
 }
