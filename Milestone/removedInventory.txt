@@ -8,3 +8,4 @@
 7,Delete,This,1,123,123,123,Samsung - LC27JG50QQNZA.png
 0,delete,this,12,312,312,3123,Acer - GN246HL.png
 19,delete,123,12,312,3123,123,Acer - GN246HL.png
+19,Asus,Monitor,1,123.45,15,2k,Asus - ROG SWIFT PG348Q.png
