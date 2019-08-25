@@ -74,6 +74,7 @@ namespace Milestone
             {
                 order[i].Stock = order[i].Stock + 1;
             }
+            im.SaveOrder(order);
             im.Save(inv);
             MessageBox.Show("Products Ordered for " + totalPrice.ToString("C2"));
             this.Hide();

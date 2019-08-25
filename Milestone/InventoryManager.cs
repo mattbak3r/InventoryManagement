@@ -9,6 +9,18 @@ namespace Milestone
 {
     class InventoryManager
     {
+        //Views previous orders
+        public void ViewOrders()
+        {
+
+        }
+
+        //Saves order to be viewed later
+        public void SaveOrder(List<Inventory> order)
+        {
+
+        }
+
         //Loads inventory into an Array (later needs to be changed to List)
         public static Inventory[] Load()
         {
@@ -36,6 +48,18 @@ namespace Milestone
             } catch (Exception) {
                 return null;
             }
+        }
+
+        //creates a list of inventory
+        public static List<Inventory> LoadList()
+        {
+            List<Inventory> invList = new List<Inventory>();
+            Inventory[] inv = Load();
+            foreach(Inventory item in inv)
+            {
+                invList.Add(item);
+            }
+            return invList;
         }
 
         //Adds removed product to a removedProduct.txt file

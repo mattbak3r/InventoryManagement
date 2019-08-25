@@ -42,7 +42,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_reset = new System.Windows.Forms.Button();
             this.btn_orderProduct = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lb_products
@@ -53,9 +55,9 @@
             this.lb_products.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_products.FormattingEnabled = true;
             this.lb_products.ItemHeight = 19;
-            this.lb_products.Location = new System.Drawing.Point(12, 86);
+            this.lb_products.Location = new System.Drawing.Point(5, 89);
             this.lb_products.Name = "lb_products";
-            this.lb_products.Size = new System.Drawing.Size(602, 308);
+            this.lb_products.Size = new System.Drawing.Size(534, 308);
             this.lb_products.TabIndex = 0;
             // 
             // tb_searchBar
@@ -78,7 +80,7 @@
             // btn_addNewProduct
             // 
             this.btn_addNewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_addNewProduct.Location = new System.Drawing.Point(621, 296);
+            this.btn_addNewProduct.Location = new System.Drawing.Point(549, 284);
             this.btn_addNewProduct.Name = "btn_addNewProduct";
             this.btn_addNewProduct.Size = new System.Drawing.Size(75, 23);
             this.btn_addNewProduct.TabIndex = 3;
@@ -90,7 +92,7 @@
             // 
             this.btn_viewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_viewProduct.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btn_viewProduct.Location = new System.Drawing.Point(621, 357);
+            this.btn_viewProduct.Location = new System.Drawing.Point(549, 345);
             this.btn_viewProduct.Name = "btn_viewProduct";
             this.btn_viewProduct.Size = new System.Drawing.Size(75, 23);
             this.btn_viewProduct.TabIndex = 4;
@@ -101,7 +103,7 @@
             // btn_removeProduct
             // 
             this.btn_removeProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_removeProduct.Location = new System.Drawing.Point(621, 326);
+            this.btn_removeProduct.Location = new System.Drawing.Point(549, 314);
             this.btn_removeProduct.Name = "btn_removeProduct";
             this.btn_removeProduct.Size = new System.Drawing.Size(75, 23);
             this.btn_removeProduct.TabIndex = 5;
@@ -112,7 +114,7 @@
             // btn_exit
             // 
             this.btn_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_exit.Location = new System.Drawing.Point(621, 386);
+            this.btn_exit.Location = new System.Drawing.Point(549, 374);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
             this.btn_exit.TabIndex = 6;
@@ -124,7 +126,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(392, 29);
             this.label1.TabIndex = 7;
@@ -172,7 +174,7 @@
             this.groupBox1.Controls.Add(this.rad_brand);
             this.groupBox1.Controls.Add(this.rad_model);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(620, 81);
+            this.groupBox1.Location = new System.Drawing.Point(548, 69);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(94, 157);
             this.groupBox1.TabIndex = 10;
@@ -182,7 +184,7 @@
             // btn_reset
             // 
             this.btn_reset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_reset.Location = new System.Drawing.Point(620, 52);
+            this.btn_reset.Location = new System.Drawing.Point(548, 40);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(27, 23);
             this.btn_reset.TabIndex = 11;
@@ -192,7 +194,8 @@
             // 
             // btn_orderProduct
             // 
-            this.btn_orderProduct.Location = new System.Drawing.Point(621, 267);
+            this.btn_orderProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_orderProduct.Location = new System.Drawing.Point(549, 257);
             this.btn_orderProduct.Name = "btn_orderProduct";
             this.btn_orderProduct.Size = new System.Drawing.Size(75, 23);
             this.btn_orderProduct.TabIndex = 12;
@@ -200,28 +203,40 @@
             this.btn_orderProduct.UseVisualStyleBackColor = true;
             this.btn_orderProduct.Click += new System.EventHandler(this.Btn_orderProduct_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.btn_orderProduct);
+            this.groupBox2.Controls.Add(this.lb_products);
+            this.groupBox2.Controls.Add(this.btn_reset);
+            this.groupBox2.Controls.Add(this.btn_addNewProduct);
+            this.groupBox2.Controls.Add(this.groupBox1);
+            this.groupBox2.Controls.Add(this.btn_viewProduct);
+            this.groupBox2.Controls.Add(this.btn_removeProduct);
+            this.groupBox2.Controls.Add(this.btn_exit);
+            this.groupBox2.Location = new System.Drawing.Point(6, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(654, 413);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            // 
             // form_products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 421);
-            this.Controls.Add(this.btn_orderProduct);
-            this.Controls.Add(this.btn_reset);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_exit);
-            this.Controls.Add(this.btn_removeProduct);
-            this.Controls.Add(this.btn_viewProduct);
-            this.Controls.Add(this.btn_addNewProduct);
-            this.Controls.Add(this.lb_products);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(679, 448);
+            this.Controls.Add(this.groupBox2);
             this.Name = "form_products";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Products";
             this.Load += new System.EventHandler(this.Form_products_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -241,6 +256,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_reset;
         private System.Windows.Forms.Button btn_orderProduct;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 
