@@ -14,9 +14,9 @@ namespace Milestone
     {
         
         private Inventory _product;
-        private Inventory[] _inv;
+        private List<Inventory> _inv;
 
-        public form_viewProducts(Inventory product, Inventory[] inventories)
+        public form_viewProducts(Inventory product, List<Inventory> inventories)
         {
             _product = product;
             _inv = inventories;
@@ -26,7 +26,8 @@ namespace Milestone
         //Loads all information to text lables, and shows a picture of the product
         private void Form_viewProducts_Load(object sender, EventArgs e)
         {
-            pb_productPicture.Image = Image.FromFile("../../Images/" + _product.Picture);
+            try { pb_productPicture.Image = Image.FromFile("../../Images/" + _product.Picture); } catch (Exception) { MessageBox.Show("Invalid picture, please edit product"); }
+            
             lb_productName.Text = _product.Name;
             lb_productPrice.Text = _product.Price.ToString("C2");
             lb_productScreenResolution.Text = _product.Resolution;

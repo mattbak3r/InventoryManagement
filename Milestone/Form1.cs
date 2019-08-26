@@ -17,18 +17,19 @@ namespace Milestone
 {
     public partial class form_products : Form
     {
-        static Inventory[] inv = InventoryManager.Load();
+        //static Inventory[] inv = InventoryManager.Load();
+        static List<Inventory> invList = InventoryManager.LoadList();
         List<Inventory> invSearch = new List<Inventory>();
 
-        public form_products(Inventory[] _inv)
+        public form_products(List<Inventory> _invList)
         {
-            if (_inv.Length == 0)
+            if (_invList.Count == 0)
             {
-                _inv = inv;
+                _invList = invList;
             }
             else
             {
-                inv = _inv;
+                invList = _invList;
             }
             InitializeComponent();
         }
@@ -46,9 +47,9 @@ namespace Milestone
                 if (invSearch.Count == 0)
                 {
                     int index = lb_products.SelectedIndex;
-                    Inventory product = inv[index - 1];
+                    Inventory product = invList[index - 1];
                     this.Hide();
-                    form_viewProducts f2 = new form_viewProducts(product, inv);
+                    form_viewProducts f2 = new form_viewProducts(product, invList);
                     f2.FormClosed += (x, args) => this.Close();
                     f2.Show(); // Shows Form2
                 }
@@ -57,7 +58,7 @@ namespace Milestone
                     int index = lb_products.SelectedIndex;
                     Inventory product = invSearch[index - 1];
                     this.Hide();
-                    form_viewProducts f2 = new form_viewProducts(product, inv);
+                    form_viewProducts f2 = new form_viewProducts(product, invList);
                     f2.FormClosed += (x, args) => this.Close();
                     f2.Show(); // Shows Form2
                 }
@@ -68,7 +69,7 @@ namespace Milestone
         private void Btn_addNewProduct_Click(object sender, EventArgs e)
         {
             this.Hide();
-            form_addProduct f3 = new form_addProduct(inv);
+            form_addProduct f3 = new form_addProduct(invList);
             f3.FormClosed += (s, args) => this.Close();
             f3.Show();
         }
@@ -77,7 +78,7 @@ namespace Milestone
         private void Btn_exit_Click(object sender, EventArgs e)
         {
             InventoryManager im = new InventoryManager();
-            im.Save(inv);
+            im.Save(invList);
             this.Close();
         }
 
@@ -85,24 +86,42 @@ namespace Milestone
         private void Btn_removeProduct_Click(object sender, EventArgs e)
         {
             InventoryManager im = new InventoryManager();
-            DialogResult d = MessageBox.Show("Remove Product?", "", MessageBoxButtons.YesNo);
 
-            if (d == DialogResult.Yes)
+            if (lb_products.SelectedIndex >= 0)
             {
-                if (lb_products.SelectedIndex == 0)
+                DialogResult d = MessageBox.Show("Remove Product?", "", MessageBoxButtons.YesNo);
+
+                if (d == DialogResult.Yes)
                 {
-                    MessageBox.Show("Please select a valid product...");
-                }
-                if (lb_products.SelectedIndex != 0)
-                {
-                    int index = lb_products.SelectedIndex - 1;
-                    Inventory product = inv[index];
-                    lb_products.Items.Remove(lb_products.SelectedItem);
-                    inv = im.Remove(inv, index);
-                    lb_products.Refresh();
-                    im.Remove(product);
-                    im.Save(inv);
-                    MessageBox.Show("Removed Item");
+                    if (lb_products.SelectedIndex == 0)
+                    {
+                        MessageBox.Show("Please select a valid product...");
+                    }
+                    if (lb_products.SelectedIndex != 0)
+                    {
+                        if (invSearch.Count == 0)
+                        {
+                            int index = lb_products.SelectedIndex - 1;
+                            Inventory product = invList[index];
+                            lb_products.Items.Remove(lb_products.SelectedItem);
+                            invList = im.Remove(invList, index);
+                            lb_products.Refresh();
+                            im.Remove(product);
+                            im.Save(invList);
+                            MessageBox.Show("Removed Item");
+                        }
+                        else
+                        {
+                            int index = lb_products.SelectedIndex - 1;
+                            Inventory product = invSearch[index];
+                            lb_products.Items.Remove(lb_products.SelectedItem);
+                            invSearch = im.Remove(invSearch, index);
+                            lb_products.Refresh();
+                            im.Remove(product);
+                            im.Save(invSearch);
+                            MessageBox.Show("Removed Item");
+                        }
+                    }
                 }
             }
         }
@@ -111,9 +130,9 @@ namespace Milestone
         private void Form_products_Load(object sender, EventArgs e)
         {
             lb_products.Items.Add("ID" + "\t" + "Stock" + "\t" + "Price" + "\t" + "Name" + "\t" + "Model");
-            for (int x = 0; x < inv.Length; x++) 
+            for (int x = 0; x < invList.Count; x++) 
             {
-                lb_products.Items.Add(inv[x].Id + "\t" + inv[x].Stock + "\t" + inv[x].Price.ToString("C2") + "\t" + inv[x].Name + "\t" + inv[x].Model);
+                lb_products.Items.Add(invList[x].Id + "\t" + invList[x].Stock + "\t" + invList[x].Price.ToString("C2") + "\t" + invList[x].Name + "\t" + invList[x].Model);
             }
         }
 
@@ -131,12 +150,11 @@ namespace Milestone
                     String searchPhrase = tb_searchBar.Text.ToLower();
                     invSearch.Clear();
 
-                    for (int i = 0; i < inv.Length; i++)
+                    for (int i = 0; i < invList.Count; i++)
                     {
-                        if (inv[i].Name.ToLower().Contains(searchPhrase))
+                        if (invList[i].Name.ToLower().Contains(searchPhrase))
                         {
-                            invSearch.Add(inv[i]);
-                            //lb_products.Items.Add(inv[i].Id + "\t" + inv[i].Stock + "\t" + inv[i].Price + "\t" + inv[i].Name + "\t" + inv[i].Model);
+                            invSearch.Add(invList[i]);
                         }
                     }
                     for (int k = 0; k < invSearch.Count; k++)
@@ -154,16 +172,15 @@ namespace Milestone
             {
                 lb_products.Items.Add("ID" + "\t" + "Stock" + "\t" + "Price" + "\t" + "Name" + "\t" + "Model");
                 invSearch.Clear();
-
                 try
                 {
                     String searchPhrase = tb_searchBar.Text.ToLower();
 
-                    for (int i = 0; i < inv.Length; i++)
+                    for (int i = 0; i < invList.Count; i++)
                     {
-                        if (inv[i].Model.ToLower().Contains(searchPhrase))
+                        if (invList[i].Model.ToLower().Contains(searchPhrase))
                         {
-                            invSearch.Add(inv[i]);
+                            invSearch.Add(invList[i]);
                             //lb_products.Items.Add(inv[i].Id + "\t" + inv[i].Stock + "\t" + inv[i].Price + "\t" + inv[i].Name + "\t" + inv[i].Model);
                         }
                     }
@@ -186,12 +203,11 @@ namespace Milestone
                 {
                     double searchPrice = double.Parse(tb_searchBar.Text);
 
-                    for (int i = 0; i < inv.Length; i++)
+                    for (int i = 0; i < invList.Count; i++)
                     {
-                        if (inv[i].Price > searchPrice - 100 && inv[i].Price < searchPrice + 100)
+                        if (invList[i].Price > searchPrice - 100 && invList[i].Price < searchPrice + 100)
                         {
-                            invSearch.Add(inv[i]);
-                            //lb_products.Items.Add(inv[i].Id + "\t" + inv[i].Stock + "\t" + inv[i].Price + "\t" + inv[i].Name + "\t" + inv[i].Model);
+                            invSearch.Add(invList[i]);
                         }
                     }
                     for (int k = 0; k < invSearch.Count; k++)
@@ -212,9 +228,9 @@ namespace Milestone
             lb_products.Items.Clear();
             invSearch.Clear();
             lb_products.Items.Add("ID" + "\t" + "Stock" + "\t" + "Price" + "\t" + "Name" + "\t" + "Model");
-            for (int x = 0; x < inv.Length; x++)
+            for (int x = 0; x < invList.Count; x++)
             {
-                lb_products.Items.Add(inv[x].Id + "\t" + inv[x].Stock + "\t" + inv[x].Price.ToString("C2") + "\t" + inv[x].Name + "\t" + inv[x].Model);
+                lb_products.Items.Add(invList[x].Id + "\t" + invList[x].Stock + "\t" + invList[x].Price.ToString("C2") + "\t" + invList[x].Name + "\t" + invList[x].Model);
             }
         }
 
@@ -222,7 +238,7 @@ namespace Milestone
         private void Btn_orderProduct_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var f5 = new form_order(inv);
+            var f5 = new form_order(invList);
             f5.FormClosed += (s, args) => this.Close();
             f5.Show();
         }

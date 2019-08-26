@@ -90,7 +90,7 @@
             // 
             // btn_order
             // 
-            this.btn_order.Location = new System.Drawing.Point(636, 255);
+            this.btn_order.Location = new System.Drawing.Point(637, 289);
             this.btn_order.Name = "btn_order";
             this.btn_order.Size = new System.Drawing.Size(128, 38);
             this.btn_order.TabIndex = 2;
@@ -152,7 +152,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(689, 364);
+            this.btn_cancel.Location = new System.Drawing.Point(690, 398);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_cancel.TabIndex = 4;
@@ -162,12 +162,13 @@
             // 
             // btn_prevOrders
             // 
-            this.btn_prevOrders.Location = new System.Drawing.Point(636, 300);
+            this.btn_prevOrders.Location = new System.Drawing.Point(637, 334);
             this.btn_prevOrders.Name = "btn_prevOrders";
             this.btn_prevOrders.Size = new System.Drawing.Size(127, 40);
             this.btn_prevOrders.TabIndex = 5;
             this.btn_prevOrders.Text = "View Previous Orders";
             this.btn_prevOrders.UseVisualStyleBackColor = true;
+            this.btn_prevOrders.Click += new System.EventHandler(this.Btn_prevOrders_Click);
             // 
             // form_order
             // 

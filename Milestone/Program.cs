@@ -8,7 +8,7 @@ namespace Milestone
 {
     static class Program
     {
-        static Inventory[] inv = InventoryManager.Load();
+        static List<Inventory> inv = InventoryManager.LoadList();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

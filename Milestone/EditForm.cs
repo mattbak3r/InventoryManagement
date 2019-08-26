@@ -13,8 +13,8 @@ namespace Milestone
     public partial class form_edit : Form
     {
         Inventory _product;
-        Inventory[] _inv;
-        public form_edit(Inventory product, Inventory[] inventories)
+        List<Inventory> _inv;
+        public form_edit(Inventory product, List<Inventory> inventories)
         {
             _product = product;
             _inv = inventories;

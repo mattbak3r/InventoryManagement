@@ -1,0 +1,14 @@
+10,Dell,UP3218K,18,3406.99,65.5,8k,Dell - UP3218k.png
+8,LG,123,18,1499.99,27,4k,LG - 34GK950F-B.png
+3,MSI,Optix MAG2421C,19,198.59,27.5,2k,MSI - Optix MAG241C.png
+18,Samsung,BFM,18,1234.56,75,8k,Samsung - CHG90.png
+18,Samsung,BFM,18,1234.56,75,8k,Samsung - CHG90.png
+18,Samsung,BFM,18,1234.56,75,8k,Samsung - CHG90.png
+18,Samsung,BFM,18,1234.56,75,8k,Samsung - CHG90.png
+14,Asus,Susa-3,24,235.75,17,1080x1920,Asus - VG248QE.png
+14,Asus,Susa-3,24,235.75,17,1080x1920,Asus - VG248QE.png
+14,Asus,Susa-3,24,235.75,17,1080x1920,Asus - VG248QE.png
+14,Asus,Susa-3,24,235.75,17,1080x1920,Asus - VG248QE.png
+14,Asus,Susa-3,24,235.75,17,1080x1920,Asus - VG248QE.png
+7,Dell,L897C,12,314.75,21,1980x1080p,Dell - AW3418DW.png
+13,Acer,Predator X27 BMIPHZX,19,1659.99,27,4K UHD,Acer - Predator X27 bmiiphzx.png

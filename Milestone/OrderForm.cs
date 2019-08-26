@@ -12,10 +12,10 @@ namespace Milestone
 {
     public partial class form_order : Form
     {
-        Inventory[] inv;
+        List<Inventory> inv;
         List<Inventory> order = new List<Inventory>();
         double totalPrice = 0;
-        public form_order(Inventory[] inventories)
+        public form_order(List<Inventory> inventories)
         {
             inv = inventories;
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace Milestone
         //Adds the Inventory Array to list box for user to select and order
         private void Form_order_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < inv.Length; i++)
+            for (int i = 0; i < inv.Count; i++)
             {
                 lb_allProducts.Items.Add(inv[i]);
             }
@@ -90,6 +90,12 @@ namespace Milestone
             var f1 = new form_products(inv);
             f1.FormClosed += (x, args) => this.Close();
             f1.Show();
+        }
+
+        private void Btn_prevOrders_Click(object sender, EventArgs e)
+        {
+            var po = new PreviousOrders();
+            po.Show();
         }
     }
 }

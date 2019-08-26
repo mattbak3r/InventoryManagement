@@ -13,9 +13,9 @@ namespace Milestone
 {
     public partial class form_addProduct : Form
     {
-        Inventory[] inv;
+        List<Inventory> inv;
         int id;
-        public form_addProduct(Inventory[] inventory)
+        public form_addProduct(List<Inventory> inventory)
         {
             inv = inventory;
             InitializeComponent();
@@ -42,7 +42,8 @@ namespace Milestone
             double _Size = double.Parse(tb_productScreenSize.Text);
             int _Stock = int.Parse(tb_productStock.Text);
             Inventory product = new Inventory(id, _Name, _Model, _Stock, _Price, _Size, _Resolution, _Picture);
-            inv = im.Add(inv, product);
+            //inv = im.Add(inv, product);
+            inv = im.AddToList(inv, product);
             im.Save(inv);
             MessageBox.Show("Product Added.");
             this.Hide();
@@ -54,7 +55,7 @@ namespace Milestone
         //Finds the next available ID number, to assign new product an ID not being used
         private void Form_addProduct_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < inv.Length; i++)
+            for (int i = 0; i < inv.Count; i++)
             {
                 if (inv[i].Id != i + 1)
                 {
@@ -63,7 +64,7 @@ namespace Milestone
                 }
                 else
                 {
-                    id = inv.Length + 1;
+                    id = inv.Count + 1;
                 }
             }
             tb_ID.Text = id.ToString();
