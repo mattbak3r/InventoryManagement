@@ -1,0 +1,5 @@
+1,Acer,GN246HL,29,279.99,24,2k,Acer - GN246HL.png
+2,HP,Omen X Emperium,33,4999.99,65,4k,HP - Omen X Emperium.png
+3,MSI,Optix MAG2421C,28,198.59,27.5,2k,MSI - Optix MAG241C.png
+4,Asus,VG248QE,23,249.99,32.7,1080p,Asus - VG248QE.png
+5,LG,C3P0,15,249.99,21,4k,LG 34GL750.png
